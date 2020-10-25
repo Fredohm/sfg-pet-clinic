@@ -41,8 +41,7 @@
                 <version>2.5.3</version>
                 <configuration>
                     <goal>install</goal>
-                    <autoVersionSubmodules>true
-                    </autoVersionSubmodules>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
                 </configuration>
             </plugin>
         </plugins>
@@ -54,4 +53,11 @@
         </developerConnection>
         <tag>sfg-pet-clinic-0.0.5</tag>
     </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>internal.repo</id>
+            <url>https://github.com/Fredohm/sfg-pet-clinic</url>
+        </repository>
+    </distributionManagement>
 </project>
