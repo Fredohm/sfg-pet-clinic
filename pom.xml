@@ -54,9 +54,4 @@
         <tag>sfg-pet-clinic-0.0.5</tag>
     </scm>
 
-    <distributionManagement>
-        <repository>
-            <id>internal.repo</id>
-        </repository>
-    </distributionManagement>
 </project>
