@@ -53,5 +53,12 @@
         </developerConnection>
         <tag>sfg-pet-clinic-0.0.5</tag>
     </scm>
+    <distributionManagement>
+        <repository>
+            <id>internal.repo</id>
+            <name>Internal repo for sfg-pet-clinic</name>
+            <url>file:d:/temp/repo/sfg-pet-clinic</url>
+        </repository>
+    </distributionManagement>
 
 </project>
