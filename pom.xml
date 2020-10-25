@@ -17,6 +17,13 @@
     <name>sfg-pet-clinic</name>
     <description>SFG Pet Clinic Project</description>
 
+    <scm>
+        <developerConnection>
+            scm:git:https://github.com/Fredohm/sfg-pet-clinic.git
+        </developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
