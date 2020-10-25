@@ -4,7 +4,7 @@
 
     <groupId>guru.springframework</groupId>
     <artifactId>sfg-pet-clinic</artifactId>
-    <version>0.0.5-SNAPSHOT</version>
+    <version>0.0.5</version>
 
     <modules>
         <module>pet-clinic-data</module>
@@ -41,7 +41,8 @@
                 <version>2.5.3</version>
                 <configuration>
                     <goal>install</goal>
-                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <autoVersionSubmodules>true
+                    </autoVersionSubmodules>
                 </configuration>
             </plugin>
         </plugins>
@@ -51,6 +52,6 @@
         <developerConnection>
             scm:git:https://github.com/Fredohm/sfg-pet-clinic.git
         </developerConnection>
-        <tag>HEAD</tag>
+        <tag>sfg-pet-clinic-0.0.5</tag>
     </scm>
 </project>
