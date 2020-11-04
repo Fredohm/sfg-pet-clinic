@@ -34,13 +34,13 @@ public class VetSDJpaService implements VetService {
     }
 
     @Override
-    public Vet save(Vet object) {
-        return vetRepository.save(object);
+    public Vet save(Vet vet) {
+        return vetRepository.save(vet);
     }
 
     @Override
-    public void delete(Vet object) {
-        vetRepository.delete(object);
+    public void delete(Vet vet) {
+        vetRepository.delete(vet);
     }
 
     @Override
