@@ -29,6 +29,14 @@
         <java.version>11</java.version>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -53,6 +61,7 @@
         </developerConnection>
         <tag>sfg-pet-clinic-0.0.5</tag>
     </scm>
+
     <distributionManagement>
         <repository>
             <id>internal.repo</id>
