@@ -26,13 +26,13 @@ public class OwnerController {
     public void setAllowedFields(WebDataBinder dataBinder) {
         dataBinder.setDisallowedFields("id");
     }
-/*
-    @GetMapping({"/", "", "/index", "/index.html"})
+
+    @GetMapping("/index")
     public String listOwners(Model model) {
         model.addAttribute("owners", ownerService.findAll());
         return "owners/index";
     }
-*/
+
     @GetMapping("/find")
     public String findOwners(Model model) {
         model.addAttribute("owner", Owner.builder().build());
