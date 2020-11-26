@@ -45,7 +45,7 @@ class OwnerControllerTest {
 
         mockMvc = MockMvcBuilders.standaloneSetup(ownerController).build();
     }
-/*
+
     @Test
     void listOwners() throws Exception {
         when(ownerService.findAll()).thenReturn(owners);
@@ -65,7 +65,7 @@ class OwnerControllerTest {
                 .andExpect(view().name("owners/index"))
                 .andExpect(model().attribute("owners", hasSize(2)));
     }
-*/
+
     @Test
     void findOwners() throws Exception {
         mockMvc.perform(get("/owners/find"))
