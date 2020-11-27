@@ -69,6 +69,7 @@ public class PetController {
             return "pets/createOrUpdatePetForm";
         } else {
             owner.getPets().add(pet);
+            pet.setOwner(owner);
             petService.save(pet);
             return "redirect:/owners/" + owner.getId();
         }
