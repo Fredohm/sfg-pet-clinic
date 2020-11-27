@@ -62,17 +62,35 @@ public class PetController {
     }
 
     @PostMapping("/pets/{petId}/edit")
-    public String processUpdateForm(@Valid Pet pet, BindingResult result, Owner owner, Model model) {
+    public String processUpdateForm(@Valid @ModelAttribute  Pet pet, BindingResult result,
+                                    @ModelAttribute Owner owner, @PathVariable Long petId, Model model) {
+        if (StringUtils.hasLength(pet.getName())) {
+            Pet foundPet = owner.getPet(pet.getName());
+            if (foundPet != null && !foundPet.getId().equals(petId)) {
+                result.rejectValue("name", "null", "id already used");
+            }
+        }
+
+        if (!StringUtils.hasLength(pet.getName())) {
+            result.rejectValue("name", "null", "name of pet cannot be empty");
+        }
+
+        pet.setOwner(owner);
+
         if (result.hasErrors()) {
-            pet.setOwner(owner);
             model.addAttribute("pet", pet);
             return "pets/createOrUpdatePetForm";
-        } else {
-            owner.getPets().add(pet);
-            pet.setOwner(owner);
-            petService.save(pet);
-            return "redirect:/owners/" + owner.getId();
         }
+
+        Pet foundPet = petService.findById(petId);
+        foundPet.setOwner(owner);
+        foundPet.setPetType(pet.getPetType());
+        foundPet.setName(pet.getName());
+        foundPet.setBirthday(pet.getBirthday());
+
+        petService.save(foundPet);
+        return "redirect:/owners/" + owner.getId();
+
     }
 
     @ModelAttribute("types")
