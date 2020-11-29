@@ -35,12 +35,15 @@ public class VisitController {
         model.addAttribute("pet", pet);
         Visit visit = new Visit();
         pet.getVisits().add(visit);
+        visit.setPet(pet);
         return visit;
     }
 
     // Spring MVC calls method loadPetWithVisit(...) before initNewVisitForm is called
     @GetMapping("/owners/*/pets/{petId}/visits/new")
     public String initNewVisitForm(@PathVariable("petId") Long petId, Model model) {
+        Pet pet = petService.findById(petId);
+        model.addAttribute("pet", pet);
         return "pets/createOrUpdateVisitForm";
     }
 
