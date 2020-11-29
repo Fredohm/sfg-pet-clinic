@@ -49,11 +49,11 @@ class VisitControllerTest {
                                         .id(1L)
                                         .lastName("Doe")
                                         .firstName("John")
-                                            .build())
+                                        .build())
                                         .petType(PetType.builder()
                                                 .name("Dog")
                                                     .build())
-                                    .build());
+                                .build());
 
         mockMvc = MockMvcBuilders.standaloneSetup(visitController).build();
     }
