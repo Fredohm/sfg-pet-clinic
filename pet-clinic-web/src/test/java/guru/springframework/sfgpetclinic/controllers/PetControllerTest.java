@@ -15,7 +15,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -51,14 +50,6 @@ class  PetControllerTest {
     @BeforeEach
     void setUp() {
         owner = Owner.builder().id(1L).build();
-
-        Pet pet = Pet.builder()
-                    .id(1L)
-                    .name("a dog")
-                    .birthday(LocalDate.of(2018, 11, 11))
-                    .petType(PetType.builder()
-                            .name("dog").build())
-                    .build();
 
         petTypes = new HashSet<>();
         petTypes.add(PetType.builder().id(1L).name("Dog").build());
@@ -106,19 +97,15 @@ class  PetControllerTest {
 
     @Test
     void processUpdateForm() throws Exception {
-        /*
+
         when(ownerService.findById(anyLong())).thenReturn(owner);
         when(petTypeService.findAll()).thenReturn(petTypes);
 
-        mockMvc.perform(post("/owners/1/pets/2/edit")
-                    .contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                    .param("Name", "a dog")
-                    .param("birthday", "2018-11-11")
-                    .param("petType", "dog"))
+        mockMvc.perform(post("/owners/1/pets/2/edit"))
                 .andExpect(status().is3xxRedirection())
                 .andExpect(view().name("redirect:/owners/1"));
 
-        verify(petService).save(any());*/
+        verify(petService).save(any());
     }
 
     @Test
