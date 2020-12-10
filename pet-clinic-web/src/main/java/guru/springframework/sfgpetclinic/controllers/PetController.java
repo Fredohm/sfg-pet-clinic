@@ -79,6 +79,7 @@ public class PetController {
 
         if (result.hasErrors()) {
             model.addAttribute("pet", pet);
+            System.out.println(result.getAllErrors());
             return "pets/createOrUpdatePetForm";
         }
 
